@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+   Two views inside the layout:
+    => One collapsed when the application is launched and the other one expended when the user opens it.
+    -->
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content"
+    android:id="@+id/frame">
+
+    <!-- Root container for the View: -->
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/RelativeLayout1"
+        >
+
+        <!-- If view is collapsed:  -->
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/collapsed_view">
+            <!-- Icon -->
+            <ImageView
+                android:id="@+id/collapsed_imageView"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:src="@drawable/ic_android_circle" />
+            <!-- Close Butt -->
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_close"
+                android:id="@+id/close_butt"
+                android:layout_marginLeft="50dp"/>
+        </RelativeLayout>
+
+        <!-- If the view is expanded:
+        android:visibility="gone"-->
+        <LinearLayout
+            android:id="@+id/expanded_view"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/menu_expanded_background"
+            android:padding="8dp">
+
+            <!-- Album picture: -->
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:id="@+id/album_picture"
+                android:src="@drawable/music_player"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <!-- Previous: -->
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:id="@+id/previous_butt"
+                        android:src="@mipmap/ic_previous"/>
+                    <!-- Play/Pause: -->
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:id="@+id/play_butt"
+                        android:src="@mipmap/ic_play"/>
+                    <!-- Next: -->
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:id="@+id/next_butt"
+                        android:src="@mipmap/ic_play_next"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/title_s"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="3dp"
+                        android:text="Title: "
+                        android:textSize="16sp"
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/album"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="3dp"
+                        android:textColor="@android:color/white"
+                        android:text="Album: "
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/artist"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="3dp"
+                        android:text="Artist: "
+                        android:textSize="14sp"
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingLeft="8dp">
+
+                <!-- Close: -->
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:id="@+id/close_butt_exp"
+                    android:src="@drawable/ic_close"/>
+                <!-- Open: -->
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_open"
+                    android:id="@+id/open_butt"
+                    android:layout_alignParentBottom="true"/>
+
+            </RelativeLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </RelativeLayout>
+</FrameLayout>
+
+    <!-- logo:
+    android:src ="@drawable/ic_android_circle"
+    android:src="@drawable/ic_android_logo"-->
